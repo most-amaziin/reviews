@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   fetchData(id, product) {
+    console.log('CLIENT: type and id in fetchData:', id + typeof id);
     if (id) {
       getReviewsByID(id)
         .then((data) => {
@@ -46,7 +47,7 @@ class App extends Component {
           this.setState({ reviews: data.rows });
         });
     } else {
-      getReviewsByID(1)
+      getReviewsByID(3424050)
         .then((data) => {
           this.setState({ reviews: data.rows });
         });
@@ -60,6 +61,7 @@ class App extends Component {
   handleReviewSubmit(review) {
     const { currentProdID } = this.state;
     const newReview = { ...review };
+    console.log('newReview:', newReview);
     newReview.review.product_id = currentProdID;
 
     postReview(newReview)
