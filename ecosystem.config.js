@@ -6,10 +6,10 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-54-224-251-247.compute-1.amazonaws.com',
-      key: '~/.ssh/fec.pem',
+      host: 'ec2-18-220-141-241.us-east-2.compute.amazonaws.com',
+      key: '~/.ssh/targit.pem',
       ref: 'origin/master',
-      repo: 'https://github.com/threetexansandacanadian/reviews.git',
+      repo: 'https://github.com/most-amaziin/reviews.git',
       path: '/home/ubuntu/reviews',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js',
     },
